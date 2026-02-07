@@ -88,11 +88,11 @@ async function onKeyDown (event) {
 }
 
 function toggleQueryDisplay () {
-  if (!window.editor) showEditor()
   if (sql.style.display === 'block') {
     sql.style.display = 'none'
     results.style.left = '0px'
   } else {
+    if (!window.editor) showEditor()
     sql.style.display = 'block'
     results.style.left = '600px'
     window.editor.focus()
