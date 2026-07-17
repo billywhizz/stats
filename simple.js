@@ -569,6 +569,7 @@ select * from summary where mins >= 1000
         executeSQLMulti(query)
           .catch(errorHandler)
       }
+      window.sql = q => executeSQLMulti(`-- freeze 8\\n-- pvalues 1\\n\\n${q}`)
     })
   document.body.addEventListener('keydown', onKeyDown)
 }
